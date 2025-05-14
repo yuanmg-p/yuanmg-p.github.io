@@ -111,6 +111,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme
     initTheme();
 
+    // Hamburger Menu
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+    
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('show');
+    });
+
+    // Close menu when clicking a nav link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('show');
+        });
+    });
+
     const header = document.querySelector('header');
     let lastScroll = 0;
     
