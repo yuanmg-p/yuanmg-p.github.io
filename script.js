@@ -19,37 +19,83 @@ function initTheme() {
 // Initialize EmailJS
 (function() {
     // Initialize EmailJS with your public key
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+    emailjs.init("2oezVB5Cqb6WDk-Ex");
 })();
 
 // Handle form submission
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
-    // Show loading state
+    // Get the form elements
     const submitBtn = this.querySelector('.submit-btn');
+    const nameInput = this.querySelector('#name');
+    const emailInput = this.querySelector('#email');
+    const messageInput = this.querySelector('#message');
+    
+    // Show loading state
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<span>Sending...</span>';
     submitBtn.disabled = true;
 
+    // Add loading class to button
+    submitBtn.classList.add('loading');
+
+    // Prepare template parameters
+    const templateParams = {
+        from_name: nameInput.value,
+        from_email: emailInput.value,
+        message: messageInput.value,
+        to_name: 'Yuan Mig', // Your name
+    };
+
     // Send email using EmailJS
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-        .then(function() {
-            // Show success message
-            alert('Message sent successfully!');
-            // Reset form
-            event.target.reset();
-        }, function(error) {
-            // Show error message
-            alert('Failed to send message. Please try again.');
-            console.error('EmailJS error:', error);
-        })
-        .finally(function() {
-            // Restore button state
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        });
+    emailjs.send(
+        'service_so3exrv', // Your EmailJS service ID
+        'template_tw7qo2s', // Your EmailJS template ID
+        templateParams
+    )
+    .then(function() {
+        // Show success message
+        showNotification('Message sent successfully!', 'success');
+        // Reset form
+        event.target.reset();
+    })
+    .catch(function(error) {
+        // Show error message
+        showNotification('Failed to send message. Please try again.', 'error');
+        console.error('EmailJS error:', error);
+    })
+    .finally(function() {
+        // Restore button state
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+    });
 });
+
+// Notification function
+function showNotification(message, type) {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+
+    // Add notification to page
+    document.body.appendChild(notification);
+
+    // Show notification with animation
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100);
+
+    // Remove notification after 3 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 3000);
+}
 
 // Scroll Animation Handler
 document.addEventListener('DOMContentLoaded', () => {
