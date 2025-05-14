@@ -23,7 +23,7 @@ function initTheme() {
 })();
 
 // Handle form submission
-document.getElementById('contactForm').addEventListener('submit', function(event) {
+document.getElementById('contactForm').addEventListener('submit', async function(event) {
     event.preventDefault();
     
     // Get the form elements
@@ -40,37 +40,43 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     // Add loading class to button
     submitBtn.classList.add('loading');
 
-    // Prepare template parameters
-    const templateParams = {
-        from_name: nameInput.value,
-        from_email: emailInput.value,
-        message: messageInput.value,
-        to_name: 'Yuan Mig', // Your name
-    };
+    try {
+        // Prepare template parameters
+        const templateParams = {
+            from_name: nameInput.value,
+            from_email: emailInput.value,
+            message: messageInput.value,
+            to_name: 'Yuan Mig',
+            subject: `Portfolio Contact: ${nameInput.value}`,
+            reply_to: emailInput.value,
+            site_name: 'Yuan Mig Portfolio',
+            company_name: 'Yuan Mig Portfolio Website',
+            company_address: 'Davao City, Philippines'
+        };
 
-    // Send email using EmailJS
-    emailjs.send(
-        'service_so3exrv', // Your EmailJS service ID
-        'template_tw7qo2s', // Your EmailJS template ID
-        templateParams
-    )
-    .then(function() {
+        // Send email using EmailJS
+        const response = await emailjs.send(
+            'service_so3exrv',
+            'template_tw7qo2s',
+            templateParams
+        );
+
+        console.log('Email sent successfully:', response);
+        
         // Show success message
         showNotification('Message sent successfully!', 'success');
         // Reset form
         event.target.reset();
-    })
-    .catch(function(error) {
-        // Show error message
-        showNotification('Failed to send message. Please try again.', 'error');
+    } catch (error) {
         console.error('EmailJS error:', error);
-    })
-    .finally(function() {
+        // Show detailed error message
+        showNotification(`Failed to send message: ${error.text || 'Please try again.'}`, 'error');
+    } finally {
         // Restore button state
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
         submitBtn.classList.remove('loading');
-    });
+    }
 });
 
 // Notification function
