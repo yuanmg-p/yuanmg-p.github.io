@@ -43,12 +43,14 @@ document.getElementById('contactForm').addEventListener('submit', async function
     try {
         // Prepare template parameters
         const templateParams = {
+            to_name: 'Yuan Mig',
             from_name: nameInput.value,
             from_email: emailInput.value,
             message: messageInput.value,
-            to_name: 'Yuan Mig',
-            subject: `Portfolio Contact: ${nameInput.value}`,
-            reply_to: emailInput.value,
+            subject: `New Portfolio Contact from ${nameInput.value}`,
+            reply_to: emailInput.value, // This ensures replies go to the sender
+            sender_email: emailInput.value, // Explicitly include sender's email
+            sender_name: nameInput.value, // Explicitly include sender's name
             site_name: 'Yuan Mig Portfolio',
             company_name: 'Yuan Mig Portfolio Website',
             company_address: 'Davao City, Philippines'
