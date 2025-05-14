@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider">
+                        <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </div>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="profile-container fade-in">
+                    <img src="/assets/img/gradphoto.jpg" alt="Yuan Mig S. Paray" class="profile-photo">
+                </div>
+                <div class="name-container fade-in">
+                    <h1 class="main-heading">Yuan Mig S. Paray</h1>
+                    <div class="title-container">
+                        <p class="profession">UI/UX Designer</p>
+                        <div class="title-decoration"></div>
+                    </div>
+                    <p class="tagline">Crafting Beautiful Digital Experiences</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about fade-in">
+            <div class="about-background"></div>
+            <div class="about-container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text-container slide-in-left">
+                        <div class="about-text">
+                            <p class="highlight-text">I'm Yuan Mig Paray, a 22-year-old fresh graduate in Computer Science 
+                            from the University of Immaculate Conception with a passion for building 
+                            user-centered web experiences and intelligent systems.</p>
+                            
+                            <div class="skills-highlight">
+                                <p>Throughout my degree and OJT, I honed my front-end skills in:</p>
+                                <ul class="skill-list">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>React</li>
+                                </ul>
+                            </div>
+
+                            <p>I've developed a keen eye for UI/UX design—crafting interfaces that look clean, 
+                            feel intuitive, and guide users seamlessly. I've also supported technical teams 
+                            by troubleshooting hardware and software issues, giving me a solid foundation in 
+                            both development and real-world tech support.</p>
+
+                            <div class="achievement-highlight">
+                                <h3>Key Achievement</h3>
+                                <p>Designed a convolutional recurrent neural network for driver drowsiness detection—merging computer vision and time-series 
+                                analysis to build proactive safety solutions.</p>
+                            </div>
+
+                            <div class="personal-section">
+                                <h3>Beyond The Code</h3>
+                                <ul class="personal-list">
+                                    <li>🎸 Devoted musician (Freestyle guitar)</li>
+                                    <li>⚫ Fan of all things black</li>
+                                    <li>💡 Inspired by challenges</li>
+                                    <li>✨ Driven by faith and creativity</li>
+                                </ul>
+                            </div>
+
+                            <div class="career-goal">
+                                <p>Excited to bring my energy to my next role in web programming, UI/UX design, 
+                                or technical support.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-stats slide-in-right">
+                        <div class="stat-card">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Years of Coding</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Technologies Mastered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2 class="fade-in">My Projects</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3>Project 1</h3>
+                    <p>Project description goes here</p>
+                </article>
+                <article class="project-card">
+                    <h3>Project 2</h3>
+                    <p>Project description goes here</p>
+                </article>
+                <article class="project-card">
+                    <h3>Project 3</h3>
+                    <p>Project description goes here</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2 class="fade-in">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category technical-skills">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <h4>Frontend Development</h4>
+                            <p>HTML5, CSS3, JavaScript, React</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="transform: scaleX(0.9);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>UI/UX Design</h4>
+                            <p>Figma, Adobe XD, User Research</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="transform: scaleX(0.85);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Backend Development</h4>
+                            <p>Node.js, Express, MongoDB</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="transform: scaleX(0.8);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Machine Learning</h4>
+                            <p>Python, TensorFlow, Computer Vision</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="transform: scaleX(0.75);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category soft-skills">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <h4>Problem Solving</h4>
+                            <p>Analytical thinking, Creative solutions</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="transform: scaleX(0.95);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Team Collaboration</h4>
+                            <p>Project management, Communication</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="transform: scaleX(0.9);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Adaptability</h4>
+                            <p>Quick learning, Flexibility</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="transform: scaleX(0.85);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Time Management</h4>
+                            <p>Organization, Prioritization</p>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="transform: scaleX(0.88);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 class="fade-in">Contact Me</h2>
+            <div class="contact-content scale-in">
+                <div class="contact-grid">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="name" name="from_name" placeholder="Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" name="from_email" placeholder="Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Message" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                    <div class="contact-illustration">
+                        <img src="assets/img/contact-illustration.svg" alt="Contact illustration of person on skateboard with envelope" class="illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <p class="footer-tagline">A good fit for you?</p>
+                <h2 class="footer-heading">Let's <a href="#contact" class="start-link">start</a></h2>
+            </div>
+            
+            <div class="footer-main">
+                <div class="footer-contact">
+                    <a href="mailto:your.email@example.com" class="footer-email">ymsparay@gmail.com</a>
+                </div>
+                
+                <div class="footer-cta">
+                    <button class="cta-button" id="quote-button">Get a quote</button>
+                </div>
+                
+                <div class="footer-info">
+                    <div class="footer-time">
+                        <div class="time-location">
+                            <p class="location">Davao City, Philippines (GMT+8)</p>
+                            <p class="current-time" id="ph-time"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="https://behance.net" target="_blank" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="quote-container">
+                <p id="quote-text" class="quote-text"></p>
+                <p id="quote-author" class="quote-author"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
