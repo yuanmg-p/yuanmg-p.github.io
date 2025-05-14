@@ -43,7 +43,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     try {
         // Prepare template parameters
         const templateParams = {
-            to_email: 'yuanmig19@gmail.com', // Your email address where you want to receive messages
+            to_email: 'ymsparay@gmail.com', // Your email address where you want to receive messages
             to_name: 'Yuan Mig',
             from_name: nameInput.value,
             from_email: emailInput.value,
