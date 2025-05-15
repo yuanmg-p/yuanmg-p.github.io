@@ -6,6 +6,8 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="responsive.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
@@ -139,18 +141,44 @@
         <section id="projects" class="projects">
             <h2 class="fade-in">My Projects</h2>
             <div class="project-grid">
-                <article class="project-card">
-                    <h3>Project 1</h3>
-                    <p>Project description goes here</p>
-                </article>
-                <article class="project-card">
-                    <h3>Project 2</h3>
-                    <p>Project description goes here</p>
-                </article>
-                <article class="project-card">
-                    <h3>Project 3</h3>
-                    <p>Project description goes here</p>
-                </article>
+                                <article class="project-card">                    <h3>Driver Drowsiness Detection System</h3>                    <p>Developed a convolutional recurrent neural network that analyzes real-time video feeds to detect driver fatigue and prevent accidents. Built with Python, TensorFlow, and OpenCV.</p>                    <div class="project-tags">                        <span class="tag">Python</span>                        <span class="tag">Deep Learning</span>                        <span class="tag">Computer Vision</span>                    </div>                </article>                <article class="project-card">                    <h3>Portfolio Website</h3>                    <p>Designed and developed a responsive personal portfolio website using modern web technologies and best practices in UI/UX design. Features dark mode, animations, and contact form integration.</p>                    <div class="project-tags">                        <span class="tag">HTML5</span>                        <span class="tag">CSS3</span>                        <span class="tag">JavaScript</span>                    </div>                </article>                <article class="project-card">                    <h3>Technical Support Dashboard</h3>                    <p>Created an internal dashboard for tracking and managing technical support tickets during my OJT. Improved response time and issue resolution tracking.</p>                    <div class="project-tags">                        <span class="tag">React</span>                        <span class="tag">Node.js</span>                        <span class="tag">MongoDB</span>                    </div>                </article>
+            </div>
+        </section>
+
+        <!-- Comments Section -->
+        <section id="comments" class="comments-section">
+            <div class="comments-container">
+                <h2>Comments <span class="comment-count">0</span></h2>
+                
+                <!-- Comment Form -->
+                <div class="comment-form-container">
+                    <form id="commentForm" class="comment-form">
+                        <div class="comment-editor">
+                            <textarea id="commentText" name="comment_text" placeholder="Add comment..." required></textarea>
+                        </div>
+                        <div class="form-footer">
+                            <div class="user-info">
+                                <input type="text" id="commenterName" name="commenter_name" placeholder="Your Name" required>
+                                <input type="email" id="commenterEmail" name="commenter_email" placeholder="Your Email" required>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Comments List -->
+                <div class="comments-list">
+                    <div class="comments-header">
+                        <span>Comments</span>
+                        <select id="commentSort" class="sort-select">
+                            <option value="newest">Most Recent</option>
+                            <option value="oldest">Oldest</option>
+                        </select>
+                    </div>
+                    <div id="commentsContainer">
+                        <!-- Comments will be dynamically inserted here -->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -332,6 +360,36 @@
         </div>
     </div>
     
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Initialize Firebase -->
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyApJR9oHhDUTDuySQ5bzPDR7KTuGUh3KR8",
+            authDomain: "yuanportfolio-7506e.firebaseapp.com",
+            projectId: "yuanportfolio-7506e",
+            storageBucket: "yuanportfolio-7506e.firebasestorage.app",
+            messagingSenderId: "79439569968",
+            appId: "1:79439569968:web:ec159dd248193f7f9cf9f5",
+            measurementId: "G-EHWL771G85"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        
+        // Verify Firebase initialization
+        if (!firebase.apps.length) {
+            console.error('Firebase not initialized!');
+        } else {
+            console.log('Firebase initialized successfully');
+        }
+    </script>
+    
+    <!-- Main script -->
     <script src="script.js"></script>
 </body>
 </html>
